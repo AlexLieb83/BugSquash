@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- BOOTSTRAP -->
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -13,30 +12,28 @@
     />
     <title>Bug Squash</title>
   </head>
-  <body>
+  <body onload="fetchIssues()">
     <section class="container">
-      <h1>Bug Squash - Issue Ticket Tracker</h1>
+      <h1>Bug Squash - Issue Tracker</h1>
       <section class="jumbotron">
-        <h3>Add New Bug:</h3>
+        <h3>Add New Issue:</h3>
         <form id="issueInputForm">
           <div class="form-group">
-            <!-- Label and input are joined by for and id -->
-            <label for="issueSubjectInput">Subject</label>
+            <label for="issueSubjInput">Subject</label>
             <input
               type="text"
               class="form-control"
-              id="issueSubjectInput"
-              placeholder="Issue Subject"
+              id="issueSubjInput"
+              placeholder="Issue Subject..."
             />
           </div>
           <div class="form-group">
-            <!-- Label and input are joined by id -->
-            <label for="issueDescriptionInput">Description</label>
+            <label for="issueDescInput">Description</label>
             <input
               type="text"
               class="form-control"
-              id="issueDescriptionInput"
-              placeholder="Issue Description"
+              id="issueDescInput"
+              placeholder="Issue Description..."
             />
           </div>
           <div class="form-group">
@@ -46,31 +43,28 @@
               <option value="Medium">Medium</option>
               <option value="High" selected>High</option>
             </select>
-          </select>
           </div>
           <div class="form-group">
-            <!-- Label and input are joined by id -->
-            <label for="issueAssignedToInput">Assign To</label>
+            <label for="issueAssignedToInput">Assigned To</label>
             <input
               type="text"
               class="form-control"
               id="issueAssignedToInput"
-              placeholder="Enter Person Responsible"
+              placeholder="Enter Person Responsible..."
             />
           </div>
-          <button type="submit" class="btn btn-warning">Submit</button>
+          <button type="submit" class="btn btn-warning">Add</button>
         </form>
       </section>
       <section class="row">
         <div class="col-lg-12">
-          <div class="issuesList">
-            <!-- This will be populated by JS -->
+          <div id="issuesList">
+            <!--This will be populated by JS-->
           </div>
         </div>
       </section>
     </section>
 
-    <!-- SCRIPTS -->
     <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script
